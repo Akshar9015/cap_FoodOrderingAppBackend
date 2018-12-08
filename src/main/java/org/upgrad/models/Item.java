@@ -7,14 +7,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.List;
 
-/**
- * Item model class contain all the attributes to be mapped to all the fields in the item table in the database.
- * Annotations are used to specify all the constraints to the table and table-columns in the database.
- * Here getter, setter and constructor are defined for this model class.
- *
- * @author chandra prakash tekam
- */
-
 @Entity
 @Table(name="item")
 public class Item {
