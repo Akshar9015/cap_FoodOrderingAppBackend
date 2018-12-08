@@ -20,6 +20,7 @@ import java.util.List;
 public class Item {
   
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @Column(name="item_name")
     private String itemName;
@@ -53,16 +54,18 @@ public class Item {
     public String getType() {
         return type;
     }
+  
+    public void setType(String type) {
+        this.type = type;
+    }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    public List<Category> getCategories() {
+        return categories;
+    }
 
-    private String itemName;
-
-    private int price;
-
-    private String type;
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
+    }
 
     @JsonIgnore
     @ManyToMany(mappedBy = "items")
@@ -77,48 +80,4 @@ public class Item {
         this.type = type;
         this.categories = categories;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
-    }
-    
-    public void setType(String type) {
-        this.type = type;
-    }
-}
+}    
