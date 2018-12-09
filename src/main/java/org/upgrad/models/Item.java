@@ -18,6 +18,9 @@ public class Item {
     private String itemName;
     private int price;
     private String type;
+    @JsonIgnore
+    @ManyToMany(mappedBy = "items")
+    private List<Category> categories;
   
     public int getId() {
         return id;
@@ -58,10 +61,6 @@ public class Item {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
-
-    @JsonIgnore
-    @ManyToMany(mappedBy = "items")
-    private List<Category> categories;
 
     public Item() {
     }
