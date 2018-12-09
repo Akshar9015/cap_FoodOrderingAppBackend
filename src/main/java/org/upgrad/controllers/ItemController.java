@@ -25,6 +25,7 @@ public class ItemController {
      */
   
     @GetMapping("/{restaurantId}")
+    @CrossOrigin
     public ResponseEntity<?> getItemById(@PathVariable int restaurantId) {
         List<Item> item =  itemService.getItemByPopularity(restaurantId);
 
